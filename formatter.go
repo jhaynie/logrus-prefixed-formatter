@@ -8,6 +8,7 @@ import (
 	"sort"
 	"strings"
 	"time"
+	"os"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/mgutz/ansi"
@@ -22,7 +23,7 @@ var (
 
 func init() {
 	baseTimestamp = time.Now()
-	isTerminal = logrus.IsTerminal()
+	isTerminal = logrus.IsTerminal(os.Stdout)
 }
 
 func miniTS() int {
